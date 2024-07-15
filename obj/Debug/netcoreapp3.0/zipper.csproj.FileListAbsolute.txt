@@ -1,0 +1,5 @@
+/Users/james/Developer/zipper/obj/Debug/netcoreapp3.0/zipper.csproj.AssemblyReference.cache
+/Users/james/Developer/zipper/obj/Debug/netcoreapp3.0/zipper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/james/Developer/zipper/obj/Debug/netcoreapp3.0/zipper.AssemblyInfoInputs.cache
+/Users/james/Developer/zipper/obj/Debug/netcoreapp3.0/zipper.AssemblyInfo.cs
+/Users/james/Developer/zipper/obj/Debug/netcoreapp3.0/zipper.csproj.CoreCompileInputs.cache

@@ -1,0 +1,15 @@
+/Users/james/Developer/zipper/bin/Debug/net6.0/zipper
+/Users/james/Developer/zipper/bin/Debug/net6.0/zipper.deps.json
+/Users/james/Developer/zipper/bin/Debug/net6.0/zipper.runtimeconfig.json
+/Users/james/Developer/zipper/bin/Debug/net6.0/zipper.dll
+/Users/james/Developer/zipper/bin/Debug/net6.0/zipper.pdb
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.csproj.AssemblyReference.cache
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.AssemblyInfoInputs.cache
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.AssemblyInfo.cs
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.csproj.CoreCompileInputs.cache
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.dll
+/Users/james/Developer/zipper/obj/Debug/net6.0/refint/zipper.dll
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.pdb
+/Users/james/Developer/zipper/obj/Debug/net6.0/zipper.genruntimeconfig.cache
+/Users/james/Developer/zipper/obj/Debug/net6.0/ref/zipper.dll
