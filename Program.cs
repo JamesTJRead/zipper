@@ -13,32 +13,17 @@ class Program
         string questionsJson = File.ReadAllText("questions.json");
         string answersJson = File.ReadAllText("answers.json");
 
-        Console.WriteLine("Loaded JSON files");
-
         var questionsData = JsonNode.Parse(questionsJson);
         var answersData = JsonSerializer.Deserialize<JsonElement>(answersJson);
 
-        if (questionsData == null || answersData.ValueKind != JsonValueKind.Object)
-        {
-            Console.WriteLine("Invalid JSON data");
-            return;
-        }
-
         // Step 2: Extract all fields with values into a dictionary
         var extractedAnswers = ExtractFields(answersData);
-        Console.WriteLine($"Extracted {extractedAnswers.Count} answers");
-
-        // Log the extracted answers
-        foreach (var kvp in extractedAnswers)
-        {
-            Console.WriteLine($"Extracted answer - Key: {kvp.Key}, Value: {kvp.Value}");
-        }
 
         // Step 3: Merge questions with answers
         MergeAnswers(questionsData, extractedAnswers);
 
         // Step 4: Output the result to a new JSON file
-        string outputFilename = "output/file2.json";
+        string outputFilename = "output/file.json";
         var options = new JsonSerializerOptions
         {
             WriteIndented = true,
@@ -54,28 +39,28 @@ class Program
     {
         var extractedFields = new Dictionary<string, JsonElement>();
 
-        void ExtractRecursive(JsonElement element, string parentKey = "")
+        void ExtractRecursive(JsonElement element)
         {
             if (element.ValueKind == JsonValueKind.Object)
             {
                 foreach (var property in element.EnumerateObject())
                 {
-                    string currentKey = string.IsNullOrEmpty(parentKey) ? property.Name : $"{parentKey}.{property.Name}";
                     if (property.Value.ValueKind == JsonValueKind.Object || property.Value.ValueKind == JsonValueKind.Array)
                     {
-                        ExtractRecursive(property.Value, currentKey);
+                        ExtractRecursive(property.Value);
                     }
                     else
                     {
-                        extractedFields[currentKey] = property.Value;
-                        Console.WriteLine($"Extracted field: {currentKey} = {property.Value}");
+                        extractedFields[property.Name] = property.Value;
                     }
                 }
             }
             else if (element.ValueKind == JsonValueKind.Array)
             {
-                extractedFields[parentKey] = element;
-                Console.WriteLine($"Extracted array field: {parentKey}");
+                foreach (var item in element.EnumerateArray())
+                {
+                    ExtractRecursive(item);
+                }
             }
         }
 
